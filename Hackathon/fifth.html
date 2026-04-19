@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - AI Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #f8f4ed, #f5f0e8);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Dark Header */
+        .ai-header {
+            background: #0f2a2a;
+            color: white;
+            padding: 50px 60px;
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .ai-header small {
+            color: #14b8a6;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .ai-header h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 15px 0 20px;
+        }
+
+        .ai-header p {
+            opacity: 0.9;
+            font-size: 17px;
+            max-width: 750px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            color: #0f2a2a;
+        }
+
+        .logo-circle {
+            width: 38px;
+            height: 38px;
+            background: #14b8a6;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .nav-links a.active {
+            color: #14b8a6;
+        }
+
+        /* Trend Pulse Cards */
+        .trend-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .trend-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 28px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .trend-card small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .trend-card h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 12px 0 8px;
+        }
+
+        .trend-card p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* AI Recommendations */
+        .recommendations {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .recommendations small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .recommendations h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 35px;
+        }
+
+        /* Request Cards */
+        .req-card {
+            background: #f8f9fa;
+            border-radius: 18px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .req-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .req-card h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .req-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .tag-web { background: #e0f2fe; color: #0369a1; }
+        .tag-high { background: #fee2e2; color: #b91c1c; }
+        .tag-design { background: #f3e8ff; color: #6b21a8; }
+        .tag-medium { background: #fef3c7; color: #b45309; }
+        .tag-career { background: #ecfdf5; color: #0f766e; }
+        .tag-low { background: #f1f5f9; color: #475569; }
+    </style>
+</head>
+<body>
+     <!-- Top Navigation -->
+        <div class="top-nav">
+            <div class="logo">
+                <div class="logo-circle">H</div>
+                HelpHub AI
+            </div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Create Request</a>
+                <a href="#" class="active">AI Center</a>
+            </div>
+        </div>
+    
+
+    <div class="container">
+
+        <!-- Dark Header -->
+        <div class="ai-header">
+            <small>AI CENTER</small>
+            <h1>See what the platform intelligence is noticing.</h1>
+            <p>AI-like insights summarize demand trends, helper readiness, urgency signals, and request recommendations.</p>
+        </div>
+
+       
+
+        <!-- Trend Pulse Section -->
+        <div class="trend-section">
+            <!-- Web Development -->
+            <div class="trend-card">
+                <small>TREND PULSE</small>
+                <h2>Web Development</h2>
+                <p>Most common support area based on active community requests.</p>
+            </div>
+
+            <!-- Urgency Watch -->
+            <div class="trend-card">
+                <small>URGENCY WATCH</small>
+                <h2>2</h2>
+                <p>Requests currently flagged high priority by the urgency detector.</p>
+            </div>
+
+            <!-- Mentor Pool -->
+            <div class="trend-card">
+                <small>MENTOR POOL</small>
+                <h2>2</h2>
+                <p>Trusted helpers with strong response history and contribution signals.</p>
+            </div>
+        </div>
+
+        <!-- AI Recommendations -->
+        <div class="recommendations">
+            <small>AI RECOMMENDATIONS</small>
+            <h2>Requests needing attention</h2>
+
+            <!-- Request 1 -->
+            <div class="req-card">
+                <h3>Need help</h3>
+                <p>AI summary: Web Development request with high urgency. Best suited for members with relevant expertise.</p>
+                <div class="tags">
+                    <span class="tag tag-web">Web Development</span>
+                    <span class="tag tag-high">High</span>
+                </div>
+            </div>
+
+            <!-- Request 2 -->
+            <div class="req-card">
+                <h3>Need help making my portfolio responsive before demo day</h3>
+                <p>Responsive layout issue with a short deadline. Best helpers are frontend mentors comfortable with CSS grids and media queries.</p>
+                <div class="tags">
+                    <span class="tag tag-web">Web Development</span>
+                    <span class="tag tag-high">High</span>
+                </div>
+            </div>
+
+            <!-- Request 3 -->
+            <div class="req-card">
+                <h3>Looking for Figma feedback on a volunteer event poster</h3>
+                <p>A visual design critique request where feedback on hierarchy, spacing, and messaging would create the most value.</p>
+                <div class="tags">
+                    <span class="tag tag-design">Design</span>
+                    <span class="tag tag-medium">Medium</span>
+                </div>
+            </div>
+
+            <!-- Request 4 -->
+            <div class="req-card">
+                <h3>Need mock interview support for internship applications</h3>
+                <p>Career coaching request focused on confidence-building, behavioral answers, and entry-level frontend interviews.</p>
+                <div class="tags">
+                    <span class="tag tag-career">Career</span>
+                    <span class="tag tag-low">Low</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

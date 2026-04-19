@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Create Request</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #f8f4ed, #f5f0e8);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            color: #0f2a2a;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: #14b8a6;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #14b8a6;
+        }
+
+        /* Dark Header */
+        .create-header {
+            background: #0f2a2a;
+            color: white;
+            padding: 50px 60px;
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .create-header small {
+            color: #14b8a6;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .create-header h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 15px 0 20px;
+        }
+
+        .create-header p {
+            opacity: 0.9;
+            font-size: 17px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Left Form Card */
+        .form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #14b8a6;
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 16px;
+            background: white;
+            color: #14b8a6;
+            border: 2px solid #14b8a6;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 16px;
+            background: linear-gradient(135deg, #14b8a6, #0f9a8a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+        }
+
+        /* Right AI Assistant Card */
+        .ai-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .ai-card small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .ai-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 12px 0 30px;
+        }
+
+        .ai-info {
+            margin-bottom: 25px;
+        }
+
+        .ai-info strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .ai-info span {
+            font-size: 17px;
+            color: #0f2a2a;
+        }
+
+        .ai-hint {
+            background: #f8f9fa;
+            padding: 18px 22px;
+            border-radius: 14px;
+            font-size: 15px;
+            color: #555;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <div class="logo">
+                <div class="logo-circle">H</div>
+                HelpHub AI
+            </div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Explore</a>
+                <a href="#" style="background:#14b8a6; color:white; padding:8px 20px; border-radius:30px;">Create Request</a>
+            </div>
+        </div>
+
+        <!-- Dark Header -->
+        <div class="create-header">
+            <small>CREATE REQUEST</small>
+            <h1>Turn a rough problem into a clear help request.</h1>
+            <p>Use built-in AI suggestions for category, urgency, tags, and a stronger description rewrite.</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Left: Form -->
+            <div class="form-card">
+                <label>Title</label>
+                <input type="text" value="Need review on my JavaScript quiz app before submission">
+
+                <label>Description</label>
+                <textarea placeholder="Explain the challenge, your current progress, deadline, and what kind of help would be useful."></textarea>
+
+                <div class="form-row">
+                    <div>
+                        <label>Tags</label>
+                        <input type="text" value="JavaScript, Debugging, Review">
+                    </div>
+                    <div>
+                        <label>Category</label>
+                        <select>
+                            <option>Web Development</option>
+                            <option>Design</option>
+                            <option>Career</option>
+                            <option>Python</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label>Urgency</label>
+                        <select>
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-secondary">Apply AI suggestions</button>
+                    <button class="btn-primary">Publish request</button>
+                </div>
+            </div>
+
+            <!-- Right: AI Assistant -->
+            <div class="ai-card">
+                <small>AI ASSISTANT</small>
+                <h2>Smart request guidance</h2>
+
+                <div class="ai-info">
+                    <strong>Suggested category</strong>
+                    <span>Community</span>
+                </div>
+
+                <div class="ai-info">
+                    <strong>Detected urgency</strong>
+                    <span>Low</span>
+                </div>
+
+                <div class="ai-info">
+                    <strong>Suggested tags</strong>
+                    <span>Add more detail for smarter tags</span>
+                </div>
+
+                <div class="ai-hint">
+                    <strong>Rewrite suggestion</strong><br>
+                    Start describing the challenge to generate a stronger version.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

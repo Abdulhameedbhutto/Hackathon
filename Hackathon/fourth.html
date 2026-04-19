@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Notifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #f8f4ed, #f5f0e8);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Dark Header */
+        .notifications-header {
+            background: #0f2a2a;
+            color: white;
+            padding: 45px 50px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+        }
+
+        .notifications-header small {
+            color: #14b8a6;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .notifications-header h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 15px 0 18px;
+        }
+
+        .notifications-header p {
+            opacity: 0.9;
+            font-size: 17px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            color: #0f2a2a;
+        }
+
+        .logo-circle {
+            width: 38px;
+            height: 38px;
+            background: #14b8a6;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #14b8a6;
+        }
+
+        /* Notification Feed Card */
+        .feed-card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .feed-header {
+            margin-bottom: 30px;
+        }
+
+        .feed-header small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .feed-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        /* Notification Items */
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 25px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+
+        .notification-item:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-content p {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .notification-meta {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .notification-status {
+            padding: 8px 20px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .notification-status:hover {
+            background: #14b8a6;
+            color: white;
+            border-color: #14b8a6;
+        }
+
+        /* Read status */
+        .read {
+            background: #f1f5f9;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+         <div class="top-nav">
+            <div class="logo">
+                <div class="logo-circle">H</div>
+                HelpHub AI
+            </div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Explore</a>
+                <a href="#" class="active">Notifications</a>
+            </div>
+        </div>
+
+    <div class="container">
+
+        <!-- Dark Header -->
+        <div class="notifications-header">
+            <small>NOTIFICATIONS</small>
+            <h1>Stay updated on requests, helpers, and trust signals.</h1>
+        </div>
+
+        
+       
+
+        <!-- Notification Feed -->
+        <div class="feed-card">
+            <div class="feed-header">
+                <small>LIVE UPDATES</small>
+                <h2>Notification feed</h2>
+            </div>
+
+            <!-- Notification Items -->
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>"Need help" was marked as solved</p>
+                    <div class="notification-meta">Status • Just now</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>Ayesha Khan offered help on "Need help"</p>
+                    <div class="notification-meta">Match • Just now</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>Your request "Need help" is now live in the community feed</p>
+                    <div class="notification-meta">Request • Just now</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>"Need help making my portfolio responsive before demo day" was marked as solved</p>
+                    <div class="notification-meta">Status • Just now</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>"Need help making my portfolio responsive before demo day" was marked as solved</p>
+                    <div class="notification-meta">Status • Just now</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>"Need help making my portfolio responsive before demo day" was marked as solved</p>
+                    <div class="notification-meta">Status • Just now</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>New helper matched to your responsive portfolio request</p>
+                    <div class="notification-meta">Match • 12 min ago</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>Your trust score increased after a solved request</p>
+                    <div class="notification-meta">Reputation • 1 hr ago</div>
+                </div>
+                <div class="notification-status">Unread</div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-content">
+                    <p>AI Center detected rising demand for interview prep</p>
+                    <div class="notification-meta">Insight • Today</div>
+                </div>
+                <div class="notification-status read">Read</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

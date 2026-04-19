@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #f8f4ed, #f5f0e8);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            color: #0f2a2a;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: #14b8a6;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #14b8a6;
+        }
+
+        /* Dark Header */
+        .profile-header {
+            background: #0f2a2a;
+            color: white;
+            padding: 50px 60px;
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .profile-header small {
+            color: #14b8a6;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .profile-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 12px 0 10px;
+        }
+
+        .profile-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Left Card - Public Profile */
+        .left-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .left-card small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .left-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 15px 0 35px;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f2a2a;
+        }
+
+        .skills {
+            margin-top: 35px;
+        }
+
+        .skills h3 {
+            font-size: 18px;
+            margin-bottom: 14px;
+            color: #444;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: #0f2a2a;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .badges {
+            margin-top: 35px;
+        }
+
+        .badges h3 {
+            font-size: 18px;
+            margin-bottom: 14px;
+            color: #444;
+        }
+
+        .badge-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Right Card - Edit Profile */
+        .right-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .right-card small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .right-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 15px 0 35px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #14b8a6, #0f9a8a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <div class="logo">
+                <div class="logo-circle">H</div>
+                HelpHub AI
+            </div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Onboarding</a>
+                <a href="#" style="background:#14b8a6; color:white; padding:8px 24px; border-radius:30px;">Profile</a>
+            </div>
+        </div>
+
+        <!-- Dark Header -->
+        <div class="profile-header">
+            <small>PROFILE</small>
+            <h1>Ayesha Khan</h1>
+            <p>Both • Karachi</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Left: Public Profile -->
+            <div class="left-card">
+                <small>PUBLIC PROFILE</small>
+                <h2>Skills and reputation</h2>
+
+                <div class="stat">
+                    <span class="stat-label">Trust score</span>
+                    <span class="stat-value">100%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Contributions</span>
+                    <span class="stat-value">35</span>
+                </div>
+
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">Career Guidance</span>
+                    </div>
+                </div>
+
+                <div class="badges">
+                    <h3>Badges</h3>
+                    <div class="badge-tags">
+                        <span class="tag">Design Ally</span>
+                        <span class="tag">Fast Responder</span>
+                        <span class="tag">Top Mentor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Edit Profile -->
+            <div class="right-card">
+                <small>EDIT PROFILE</small>
+                <h2>Update your identity</h2>
+
+                <div class="form-row">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" value="Ayesha Khan">
+                    </div>
+                    <div>
+                        <label>Location</label>
+                        <input type="text" value="Karachi">
+                    </div>
+                </div>
+
+                <label>Skills</label>
+                <input type="text" value="Figma, UI/UX, HTML/CSS, Career Guidance">
+
+                <label>Interests</label>
+                <input type="text" value="Hackathons, UI/UX, Community Building">
+
+                <button class="save-btn">Save profile</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HelpHub AI - Community Access</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    /* Navbar - Top Section */
+    .navbar {
+      background: #f8f4ed;   
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #0a2f2f;
+    }
+
+    .logo-circle {
+      width: 38px;
+      height: 38px;
+      background: #14b8a6;
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #14b8a6;
+    }
+
+    /* Main Content */
+    .main-content {
+      display: flex;
+      max-width: 1080px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    /* Left Panel - Dark */
+    .left-panel {
+      background: #0a2f2f;
+      color: white;
+      padding: 60px 50px;
+      width: 45%;
+      border-radius: 24px;
+      flex-shrink: 0;
+    }
+
+    .left-panel h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .left-panel p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      list-style: none;
+    }
+
+    .features li {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      opacity: 0.95;
+    }
+
+    .features li:before {
+      content: "•";
+      color: #14b8a6;
+      font-size: 24px;
+      line-height: 1;
+      margin-top: -4px;
+    }
+
+    /* Right Panel - Login Form */
+    .right-panel {
+      background: white;
+      padding: 60px 50px;
+      width: 55%;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      color: #666;
+      margin-bottom: 35px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 15px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    select:focus, input:focus {
+      outline: none;
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+    }
+
+    .two-columns {
+      display: flex;
+      gap: 15px;
+    }
+
+    .two-columns input {
+      flex: 1;
+    }
+
+    .continue-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #14b8a6, #0f9a8a);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+
+    .continue-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo-circle">H</div>
+      <span>HelpHub AI</span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Leaderboard</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <p style="color:#14b8a6; font-weight:600; letter-spacing:1px; margin-bottom:12px;">COMMUNITY ACCESS</p>
+      <h1>Enter the support network.</h1>
+      <p>Choose a demo identity, set your role, and jump into a multi-page product flow designed for asking, offering, and tracking help with a premium interface.</p>
+      
+      <ul class="features">
+        <li>Role-based entry for Need Help, Can Help, or Both</li>
+        <li>Direct path into dashboard, requests, AI Center, and community feed</li>
+        <li>Persistent demo session powered by LocalStorage</li>
+      </ul>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <p style="color:#14b8a6; font-weight:600; font-size:14px; letter-spacing:1px;">LOGIN / SIGNUP</p>
+      <h2 class="form-title">Authenticate your community profile</h2>
+      <p class="form-subtitle">Select demo user</p>
+
+      <select id="demoUser" style="margin-bottom:20px;">
+        <option value="Ayesha Khan">Ayesha Khan</option>
+        <option value="Ahmed Ali">Ahmed Ali</option>
+        <option value="Fatima Noor">Fatima Noor</option>
+      </select>
+
+      <label>Role selection</label>
+      <select id="role">
+        <option value="Both">Both</option>
+        <option value="Need Help">Need Help</option>
+        <option value="Can Help">Can Help</option>
+      </select>
+
+      <div class="two-columns">
+        <div>
+          <label>Email</label>
+          <input type="email" value="community@helphub.ai" readonly />
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="password" value="••••••••" readonly />
+        </div>
+      </div>
+
+      <button class="continue-btn" onclick="alert('Welcome to HelpHub AI Dashboard! (Demo)')">
+        Continue to dashboard
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

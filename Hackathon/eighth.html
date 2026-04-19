@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Messages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #f8f4ed, #f5f0e8);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            color: #0f2a2a;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: #14b8a6;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #14b8a6;
+        }
+
+        /* Dark Header */
+        .messages-header {
+            background: #0f2a2a;
+            color: white;
+            padding: 50px 60px;
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .messages-header small {
+            color: #14b8a6;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .messages-header h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 15px 0 20px;
+        }
+
+        .messages-header p {
+            opacity: 0.9;
+            font-size: 17px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Left Card - Recent Messages */
+        .left-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .left-card small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .left-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 15px 0 30px;
+        }
+
+        .message-item {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 22px 25px;
+            margin-bottom: 18px;
+            transition: all 0.3s;
+        }
+
+        .message-item:hover {
+            background: #f1f5f9;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .message-header strong {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .time {
+            background: #e5e7eb;
+            color: #555;
+            font-size: 13px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .message-text {
+            color: #555;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* Right Card - Send Message */
+        .right-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .right-card small {
+            color: #14b8a6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .right-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 15px 0 35px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .send-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #14b8a6, #0f9a8a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <div class="logo">
+                <div class="logo-circle">H</div>
+                HelpHub AI
+            </div>
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Explore</a>
+                <a href="#" style="background:#14b8a6; color:white; padding:8px 24px; border-radius:30px;">Messages</a>
+            </div>
+        </div>
+
+        <!-- Dark Header -->
+        <div class="messages-header">
+            <small>INTERACTION / MESSAGING</small>
+            <h1>Keep support moving through direct communication.</h1>
+            <p>Basic messaging gives helpers and requesters a clear follow-up path once a match happens.</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Left: Recent Messages -->
+            <div class="left-card">
+                <small>CONVERSATION STREAM</small>
+                <h2>Recent messages</h2>
+
+                <!-- Message 1 -->
+                <div class="message-item">
+                    <div class="message-header">
+                        <strong>Ayesha Khan → Sara Noor</strong>
+                        <span class="time">09:45 AM</span>
+                    </div>
+                    <div class="message-text">
+                        I checked your portfolio request. Share the breakpoint screenshots and I can suggest fixes.
+                    </div>
+                </div>
+
+                <!-- Message 2 -->
+                <div class="message-item">
+                    <div class="message-header">
+                        <strong>Hassan Ali → Ayesha Khan</strong>
+                        <span class="time">11:10 AM</span>
+                    </div>
+                    <div class="message-text">
+                        Your event poster concept is solid. I would tighten the CTA and reduce the background texture.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Send Message -->
+            <div class="right-card">
+                <small>SEND MESSAGE</small>
+                <h2>Start a conversation</h2>
+
+                <label>To</label>
+                <select>
+                    <option>Ayesha Khan</option>
+                    <option>Sara Noor</option>
+                    <option>Hassan Ali</option>
+                </select>
+
+                <label>Message</label>
+                <textarea placeholder="Share support details, ask for files, or suggest next steps."></textarea>
+
+                <button class="send-btn">Send</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
